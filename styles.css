@@ -62,12 +62,12 @@ button {
   border: hidden;
 }
 
-#message_display_area {
+#message-display-area {
   min-height: 150px;
   min-width: 800px;
 }
 
-#message_loading_img {
+#message-loading-img {
   max-height: 70px;
   width: auto;
 }

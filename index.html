@@ -13,33 +13,34 @@
       <section>
         <h2>Which Type of message?</h2>
         <article>
-          <form>
+          <form id="message-type-selector">
             <span>
-              <input type="radio" id="affirmation" name="message_type" /><label
-                for="affirmation"
+              <input type="radio" id="affirmations" name="message-type" /><label
+                for="affirmations"
                 >affirmation</label
               ></span
             >
             <span>
-              <input type="radio" id="mantra" name="message_type" /><label
-                for="mantra"
+              <input type="radio" id="mantras" name="message-type" /><label
+                for="mantras"
                 >mantra</label
               ></span
             >
           </form>
-          <footer><button>Receive Message</button></footer>
+          <footer><button id="receive-msg-btn">Receive Message</button></footer>
         </article>
       </section>
       <section>
-        <article id="message_display_area">
+        <article id="message-display-area">
           <img
             src="./assets/meditate.svg"
             alt="message_loading"
-            id="message_loading_img"
+            id="message-loading-img"
           />
         </article>
       </section>
     </main>
+    <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
