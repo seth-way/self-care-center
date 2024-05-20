@@ -30,10 +30,10 @@ This repository was built by [Seth Way](https://github.com/seth-way).
 
 ## Learning Goals
 
-- Gain experience building an application that utilizes HTML, CSS and JavaScript
-- Write HTML and CSS to match a provided comp
-- Understand how to listen to and respond to user events
-- Individualize your programming skill set
+- Gain experience building an application that utilizes HTML, CSS and JavaScript.
+- Write HTML and CSS to match a provided comp.
+- Understand how to listen to and respond to user events.
+- Individualize my programming skill set.
 
 [//]: <> (## Wins + Challenges)
 
