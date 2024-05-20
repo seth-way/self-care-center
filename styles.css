@@ -1,8 +1,73 @@
-/* font-family: 'Quicksand', sans-serif;
-COLORS
+/*---
+font-family: 'Quicksand', sans-serif;
+COLORS 
 light-yellow - #f7e4bf;
 light-blue - #78a7c6;
 dark-blue - #134d71;
 white - #ffffff;
 black - #000000;
-*/
+---*/
+
+body {
+  background-image: linear-gradient(#134d71, #78a7c6, #f7e4bf);
+  height: 100vh;
+  width: 100%;
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 75px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+article {
+  background: white;
+  color: black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 100px;
+  min-width: 550px;
+}
+
+form {
+  font-style: italic;
+  min-height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button {
+  padding: 5px 20px;
+  background: #134d71;
+  color: #ffffff;
+  border-radius: 5px;
+  border: hidden;
+}
+
+#message_display_area {
+  min-height: 150px;
+  min-width: 800px;
+}
+
+#message_loading_img {
+  max-height: 70px;
+  width: auto;
+}
