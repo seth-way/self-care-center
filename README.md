@@ -1,4 +1,4 @@
-# [Self-Care Center](https://seth-way.github.io/self-care-center/)
+# [🧘‍♂️ Self-Care Center 🧘‍♀️](https://seth-way.github.io/self-care-center/)
 
 ## Abstract
 
