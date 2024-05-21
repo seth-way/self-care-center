@@ -9,23 +9,49 @@ black - #000000;
 ---*/
 
 body {
-  background-image: linear-gradient(#134d71, #78a7c6, #f7e4bf);
-  height: 100vh;
-  width: 100%;
+  background: rgba(0, 0, 0, 0);
   font-family: 'Quicksand', sans-serif;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
+  z-index: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-.affirmations-color-scheme {
-  background-image: linear-gradient(#947db3, #f7adc1, #f0ecdf);
-}
+.bg {
+  position: absolute;
+  transition: opacity 300ms;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  z-index: -1;
 
-.mantras-color-scheme {
-  background-image: linear-gradient(#c76b98, #f09f9c, #fcc3a3);
+  &.chosen {
+    opacity: 1;
+  }
+
+  &#bg-default {
+    background-image: linear-gradient(#134d71, #78a7c6, #f7e4bf);
+  }
+
+  &#bg-affirmations {
+    background-image: linear-gradient(#947db3, #f7adc1, #f0ecdf);
+  }
+
+  &#bg-mantras {
+    background-image: linear-gradient(#c76b98, #f09f9c, #fcc3a3);
+  }
+
+  &#bg-base {
+    background: #134d71;
+    z-index: -2;
+    opacity: 1;
+  }
 }
 
 main {
@@ -65,20 +91,20 @@ form {
 
 .radio-input-group {
   transition: all 0.3s ease-in-out;
-}
 
-.radio-input-group:hover {
-  color: #134d71;
+  &:hover {
+    color: #134d71;
+  }
 }
 
 input {
   transition: all 0.3s ease-in-out;
   border-radius: 10px;
   border: hidden;
-}
 
-input:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 button {
@@ -88,12 +114,12 @@ button {
   border-radius: 5px;
   border: hidden;
   transition: all 0.3s ease-in-out;
-}
 
-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 2px 2px #78a7c6;
-  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 2px 2px #78a7c6;
+    cursor: pointer;
+  }
 }
 
 #message-display-area {

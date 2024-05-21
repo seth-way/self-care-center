@@ -8,6 +8,12 @@ var buttonClickEnabled = true;
 ////////////////////////////////////////////////////////////////////////////////
 //// DOM VARIABLES
 ////////////////////////////////////////////////////////////////////////////////
+/* ------ backgrounds ------ */
+var backgrounds = {};
+backgrounds.default = document.querySelector('#bg-default');
+backgrounds.affirmations = document.querySelector('#bg-affirmations');
+backgrounds.mantras = document.querySelector('#bg-mantras');
+
 var displayMessageText = document.querySelector('#display-message-text');
 var messageLoadingImg = document.querySelector('#message-loading-img');
 var messageTypeSelector = document.querySelector('#message-type-selector');
@@ -23,19 +29,20 @@ receiveMsgBtn.addEventListener('click', receiveMessage);
 function updateMessageType(e) {
   e.preventDefault();
   messageType = e.target.id;
-  if (messageType) {
-    document.body.classList.remove(
-      'affimations-color-scheme',
-      'mantras-color-scheme'
-    );
-    document.body.classList.add(`${messageType}-color-scheme`);
+
+  for (const bg in backgrounds) {
+    if (bg === messageType) {
+      backgrounds[bg].classList.add('chosen');
+    } else {
+      backgrounds[bg].classList.remove('chosen');
+    }
   }
 }
 
 async function receiveMessage() {
   if (!messageType || !buttonClickEnabled) return;
-  console.log('click registered');
   buttonClickEnabled = false;
+
   if (messageLoadingImg.classList.contains('shown')) {
     await hideElement(messageLoadingImg, 0.75);
     displayMessageText.innerText = `${getRandomMessage(messages[messageType])}`;
@@ -47,6 +54,7 @@ async function receiveMessage() {
     displayMessageText.innerText = `${getRandomMessage(messages[messageType])}`;
     await showElement(displayMessageText, 1);
   }
+
   buttonClickEnabled = true;
 }
 
