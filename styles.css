@@ -54,12 +54,37 @@ form {
   align-items: center;
 }
 
+.radio-input-group {
+  transition: all 0.3s ease-in-out;
+}
+
+.radio-input-group:hover {
+  color: #134d71;
+}
+
+input {
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  border: hidden;
+}
+
+input:hover {
+  cursor: pointer;
+}
+
 button {
   padding: 5px 20px;
   background: #134d71;
   color: #ffffff;
   border-radius: 5px;
   border: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 2px 2px #78a7c6;
+  cursor: pointer;
 }
 
 #message-display-area {
