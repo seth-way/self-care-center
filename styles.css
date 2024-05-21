@@ -31,7 +31,7 @@ body {
   opacity: 0;
   z-index: -1;
 
-  &.chosen {
+  &.current {
     opacity: 1;
   }
 
@@ -153,4 +153,53 @@ button {
   max-height: 70px;
   width: auto;
   transition: all 1.5s ease-in-out;
+}
+
+.animate > .meditation-head {
+  animation: grow 5s infinite ease-in-out;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.animate > #halo1 {
+  animation: rotateClockwise 3s infinite linear;
+  transform-box: fill-box;
+  transform-origin: 50% 75%;
+}
+
+.animate > #halo2 {
+  animation: rotateCounterClockwise 4s infinite linear;
+  transform-box: fill-box;
+  transform-origin: 213% 57%;
+}
+
+.animate > #halo3 {
+  animation: rotateClockwise 6s infinite linear;
+  transform-box: fill-box;
+  transform-origin: -120% 57%;
+  animation-play-state: running;
+}
+
+@keyframes rotateClockwise {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes rotateCounterClockwise {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+
+@keyframes grow {
+  50% {
+    transform: scale(1.3);
+  }
 }

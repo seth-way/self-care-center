@@ -32,9 +32,9 @@ function updateMessageType(e) {
 
   for (const bg in backgrounds) {
     if (bg === messageType) {
-      backgrounds[bg].classList.add('chosen');
+      backgrounds[bg].classList.add('current');
     } else {
-      backgrounds[bg].classList.remove('chosen');
+      backgrounds[bg].classList.remove('current');
     }
   }
 }
@@ -42,14 +42,15 @@ function updateMessageType(e) {
 async function receiveMessage() {
   if (!messageType || !buttonClickEnabled) return;
   buttonClickEnabled = false;
-
   if (messageLoadingImg.classList.contains('shown')) {
+    messageLoadingImg.classList.add('animate');
+    await pauseForCSSTransition(2);
     await hideElement(messageLoadingImg, 0.75);
     displayMessageText.innerText = `${getRandomMessage(messages[messageType])}`;
     await showElement(displayMessageText, 1);
   } else {
     await hideElement(displayMessageText, 0.75);
-    await showElement(messageLoadingImg, 1.5);
+    await showElement(messageLoadingImg, 2.5);
     await hideElement(messageLoadingImg, 0.75);
     displayMessageText.innerText = `${getRandomMessage(messages[messageType])}`;
     await showElement(displayMessageText, 1);
