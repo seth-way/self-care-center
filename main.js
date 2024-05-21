@@ -3,10 +3,13 @@
 //// GLOBAL VARIABLES
 ////////////////////////////////////////////////////////////////////////////////
 var messageType;
+var messageElement;
+var buttonClickEnabled = true;
 ////////////////////////////////////////////////////////////////////////////////
 //// DOM VARIABLES
 ////////////////////////////////////////////////////////////////////////////////
-var messageDisplayArea = document.querySelector('#message-display-area');
+var displayMessageText = document.querySelector('#display-message-text');
+var messageLoadingImg = document.querySelector('#message-loading-img');
 var messageTypeSelector = document.querySelector('#message-type-selector');
 var receiveMsgBtn = document.querySelector('#receive-msg-btn');
 ////////////////////////////////////////////////////////////////////////////////
@@ -29,12 +32,42 @@ function updateMessageType(e) {
   }
 }
 
-function receiveMessage() {
-  if (!messageType) return;
+async function receiveMessage() {
+  if (!messageType || !buttonClickEnabled) return;
+  console.log('click registered');
+  buttonClickEnabled = false;
+  if (messageLoadingImg.classList.contains('shown')) {
+    await hideElement(messageLoadingImg, 0.75);
+    displayMessageText.innerText = `${getRandomMessage(messages[messageType])}`;
+    await showElement(displayMessageText, 1);
+  } else {
+    await hideElement(displayMessageText, 0.75);
+    await showElement(messageLoadingImg, 1.5);
+    await hideElement(messageLoadingImg, 0.75);
+    displayMessageText.innerText = `${getRandomMessage(messages[messageType])}`;
+    await showElement(displayMessageText, 1);
+  }
+  buttonClickEnabled = true;
+}
 
-  messageDisplayArea.innerHTML = `<p>${getRandomMessage(
-    messages[messageType]
-  )}</p>`;
+async function hideElement(element, delay = 0) {
+  element.classList.remove('shown');
+  element.classList.add('hidden');
+  return await pauseForCSSTransition(delay);
+}
+
+async function showElement(element, delay = 0) {
+  element.classList.remove('hidden');
+  element.classList.add('shown');
+  return await pauseForCSSTransition(delay);
+}
+
+function pauseForCSSTransition(miliseconds) {
+  return new Promise(resolve =>
+    setTimeout(() => {
+      resolve();
+    }, miliseconds * 1000)
+  );
 }
 
 function getRandomMessage(array) {
