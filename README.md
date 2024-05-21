@@ -34,6 +34,7 @@ This repository was built by [Seth Way](https://github.com/seth-way).
 - Write HTML and CSS to match a provided comp.
 - Understand how to listen to and respond to user events.
 - Individualize my programming skill set.
+- Project requirements can be found [here](https://frontend.turing.edu/projects/module-1/self-care-center.html).
 
 [//]: <> (## Wins + Challenges)
 
