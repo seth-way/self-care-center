@@ -20,6 +20,14 @@ body {
   gap: 15px;
 }
 
+.affirmations-color-scheme {
+  background-image: linear-gradient(#947db3, #f7adc1, #f0ecdf);
+}
+
+.mantras-color-scheme {
+  background-image: linear-gradient(#c76b98, #f09f9c, #fcc3a3);
+}
+
 main {
   display: flex;
   flex-direction: column;

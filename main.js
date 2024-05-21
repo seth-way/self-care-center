@@ -20,6 +20,13 @@ receiveMsgBtn.addEventListener('click', receiveMessage);
 function updateMessageType(e) {
   e.preventDefault();
   messageType = e.target.id;
+  if (messageType) {
+    document.body.classList.remove(
+      'affimations-color-scheme',
+      'mantras-color-scheme'
+    );
+    document.body.classList.add(`${messageType}-color-scheme`);
+  }
 }
 
 function receiveMessage() {
