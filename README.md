@@ -19,7 +19,7 @@ This solo coding challenge gave me the opportunity to get a pulse on where I'm a
 
 ## Preview of App
 
-![Preview of App](https://imgur.com/9am1BjU.gif)
+![Preview of App](https://imgur.com/EXzjh3O.gif)
 
 [//]: <> (## Context)
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
