@@ -3,7 +3,6 @@
 //// GLOBAL VARIABLES
 ////////////////////////////////////////////////////////////////////////////////
 var messageType;
-var messageElement;
 var buttonClickEnabled = true;
 ////////////////////////////////////////////////////////////////////////////////
 //// DOM VARIABLES
@@ -13,11 +12,12 @@ var backgrounds = {};
 backgrounds.default = document.querySelector('#bg-default');
 backgrounds.affirmations = document.querySelector('#bg-affirmations');
 backgrounds.mantras = document.querySelector('#bg-mantras');
-
-var displayMessageText = document.querySelector('#display-message-text');
-var messageLoadingImg = document.querySelector('#message-loading-img');
+/* ------ message display area ------ */
 var messageTypeSelector = document.querySelector('#message-type-selector');
 var receiveMsgBtn = document.querySelector('#receive-msg-btn');
+/* ------ message type selection area ------ */
+var displayMessageText = document.querySelector('#display-message-text');
+var messageLoadingImg = document.querySelector('#message-loading-img');
 ////////////////////////////////////////////////////////////////////////////////
 //// EVENT LISTENERS
 ////////////////////////////////////////////////////////////////////////////////
@@ -26,10 +26,33 @@ receiveMsgBtn.addEventListener('click', receiveMessage);
 ////////////////////////////////////////////////////////////////////////////////
 //// FUNCTIONS
 ////////////////////////////////////////////////////////////////////////////////
+/* ------ logic functions ------ */
+function getRandomMessage(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
 function updateMessageType(e) {
   e.preventDefault();
   messageType = e.target.id;
+  updateBackground();
+}
 
+async function receiveMessage() {
+  if (!messageType || !buttonClickEnabled) return;
+
+  buttonClickEnabled = false;
+  if (messageLoadingImg.classList.contains('shown')) {
+    await startImageAnimation();
+    await hideImageShowMessage();
+  } else {
+    await hideMessageShowImage();
+    await hideImageShowMessage();
+  }
+
+  buttonClickEnabled = true;
+}
+/* ------ DOM functions ------ */
+function updateBackground() {
   for (const bg in backgrounds) {
     if (bg === messageType) {
       backgrounds[bg].classList.add('current');
@@ -39,24 +62,20 @@ function updateMessageType(e) {
   }
 }
 
-async function receiveMessage() {
-  if (!messageType || !buttonClickEnabled) return;
-  buttonClickEnabled = false;
-  if (messageLoadingImg.classList.contains('shown')) {
-    messageLoadingImg.classList.add('animate');
-    await pauseForCSSTransition(2);
-    await hideElement(messageLoadingImg, 0.75);
-    displayMessageText.innerText = `${getRandomMessage(messages[messageType])}`;
-    await showElement(displayMessageText, 1);
-  } else {
-    await hideElement(displayMessageText, 0.75);
-    await showElement(messageLoadingImg, 2.5);
-    await hideElement(messageLoadingImg, 0.75);
-    displayMessageText.innerText = `${getRandomMessage(messages[messageType])}`;
-    await showElement(displayMessageText, 1);
-  }
+async function startImageAnimation() {
+  messageLoadingImg.classList.add('animate');
+  return await pauseForCSSTransition(2);
+}
 
-  buttonClickEnabled = true;
+async function hideImageShowMessage() {
+  await hideElement(messageLoadingImg, 0.75);
+  displayMessageText.innerText = `${getRandomMessage(messages[messageType])}`;
+  return await showElement(displayMessageText, 1);
+}
+
+async function hideMessageShowImage() {
+  await hideElement(displayMessageText, 0.75);
+  return await showElement(messageLoadingImg, 2.5);
 }
 
 async function hideElement(element, delay = 0) {
@@ -79,6 +98,4 @@ function pauseForCSSTransition(miliseconds) {
   );
 }
 
-function getRandomMessage(array) {
-  return array[Math.floor(Math.random() * array.length)];
-}
+
