@@ -50,11 +50,19 @@ body {
   }
 }
 
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 75px;
+  gap: 6em;
 }
 
 section {
@@ -72,19 +80,19 @@ article {
   align-items: center;
   justify-content: space-evenly;
   min-height: 100px;
-  width: 550px;
-  max-width: 95vw;
+  width: 800px;
+  max-width: 90vw;
 }
-////////////////////////////////
+
 /* ------ message form ------ */
-////////////////////////////////
+
 form {
   font-style: italic;
-  min-height: 40px;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-size: 1.2em;
 }
 
 .radio-input-group {
@@ -106,7 +114,8 @@ input {
 }
 
 button {
-  padding: 5px 20px;
+  font-size: 1.2em;
+  padding: 5px 35px;
   background: var(--dark-blue);
   color: #ffffff;
   border-radius: 5px;
@@ -119,25 +128,24 @@ button {
     cursor: pointer;
   }
 }
-////////////////////////////////////////
+
 /* ------ message display area ------ */
-////////////////////////////////////////
+
 #message-display-area {
-  min-height: 150px;
-  width: 800px;
-  max-width: 95vw;
+  min-height: 10em;
+  width: 70em;
+  max-width: 90vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-#message-display-area > p {
+  text-align: center;
 }
 
 #display-message-text {
   color: rgba(0, 0, 0, 1);
   transition: all 1.5s ease-in-out;
+  font-size: 1.2em;
 }
 
 .hidden {
@@ -150,13 +158,13 @@ button {
 }
 
 #message-loading-img {
-  max-height: 70px;
+  height: 5em;
   width: auto;
   transition: all 1.5s ease-in-out;
 }
-////////////////////////////////////////
+
 /* ------ meditation animation ------ */
-////////////////////////////////////////
+
 .animate > .meditation-head {
   animation: grow 5s infinite ease-in-out;
   transform-box: fill-box;
@@ -202,5 +210,61 @@ button {
 @keyframes grow {
   50% {
     transform: scale(1.3);
+  }
+}
+
+/* ------ screen size adjustments ------ */
+
+@media screen and (max-width: 550px) {
+  body {
+    height: 92vh;
+    padding: 2em 1em;
+    justify-content: flex-start;
+  }
+
+  main {
+    gap: 2em;
+    flex-grow: 1;
+    overflow: hidden;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  section {
+    max-width: 92%;
+  }
+
+  form {
+    justify-content: center;
+    gap: 2em;
+  }
+
+  #message-select-section {
+    flex-grow: 0;
+  }
+
+  #display-message-text {
+    max-width: 10em;
+    font-size: 1.6em;
+  }
+
+  #message-display-section {
+    flex-grow: 1;
+    background: yellow;
+    max-width: 75%;
+  }
+
+  #message-display-area {
+    flex-grow: 1;
+  }
+
+  #message-loading-img {
+    height: 10em;
   }
 }
