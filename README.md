@@ -21,11 +21,16 @@ This solo coding challenge gave me the opportunity to get a pulse on where I'm a
 
 ## Preview of App
 
-![Preview of App](https://imgur.com/EXzjh3O.gif)
+### For Desktop
+![Preview of App on desktop](https://imgur.com/EXzjh3O.gif)
+
+### For Mobile
+
+![Preview of App on mobile](https://imgur.com/og7FOyg.gif)
 
 ## Context
 
-I completed this project in my 2nd week as a fulltime Turing student. This was our first real deep dive into custom CSS and building our own HTML structure. This project took roughly 10-12 hours to complete.
+I completed this project in my 3rd week as a fulltime Turing student. This was our first real deep dive into custom CSS & building our own HTML structure. This project took roughly 10-12 hours to complete.
 
 ## Contributors
 
@@ -33,13 +38,16 @@ This repository was built by [Seth Way](https://github.com/seth-way).
 
 ## Learning Goals
 
-- Gain experience building an application that utilizes HTML, CSS and JavaScript.
-- Write HTML and CSS to match a provided comp.
-- Understand how to listen to and respond to user events.
+- Gain experience building an application that utilizes HTML, CSS & JavaScript.
+- Write HTML & CSS to match a provided comp.
+- Understand how to listen to & respond to user events.
 - Individualize my programming skill set.
+- Work with new concepts such as SVG animations, @media breakpoints, & async functions.
 - Project requirements can be found [here](https://frontend.turing.edu/projects/module-1/self-care-center.html).
 
 ## Wins + Challenges
 
-- I used this project to challenge myself to learn new CSS techniques. I was able to learn how animate SVGs and apply smooth backround transitions. I also learned techniques to avoid that might slow down the responsiveness of a site and lead to a lesser user experience.
+- I used this project to challenge myself to learn new CSS techniques. I was able to learn how animate SVGs & apply smooth background transitions. I also learned techniques to avoid that might slow down the responsiveness of a site & lead to a lesser user experience.
+- I worked with @media breakpoints for the first time. I was able to successfully make changes for an optimized mobile experience.
+- I work with async functions, promises, & the setTimeout function to allow time in a synchronous function for CSS transitions. Normally, slowing down an action in such a way may be a negative, but for this usecase, it allowed me to show off my SVG animations. It also fit well with the over all 'calming' theme of the app.
 - I was able to complete the project ahead of schedule.
