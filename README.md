@@ -1,5 +1,7 @@
 # [🧘‍♂️ Self-Care Center 🧘‍♀️](https://seth-way.github.io/self-care-center/)
 
+☝️ Click the link for a working deployment of this repo.
+
 ## Abstract
 
 How can I care for myself? One way is with affirmations and mantras!
@@ -21,8 +23,9 @@ This solo coding challenge gave me the opportunity to get a pulse on where I'm a
 
 ![Preview of App](https://imgur.com/EXzjh3O.gif)
 
-[//]: <> (## Context)
-[//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
+## Context
+
+I completed this project in my 2nd week as a fulltime Turing student. This was our first real deep dive into custom CSS and building our own HTML structure. This project took roughly 10-12 hours to complete.
 
 ## Contributors
 
@@ -36,6 +39,7 @@ This repository was built by [Seth Way](https://github.com/seth-way).
 - Individualize my programming skill set.
 - Project requirements can be found [here](https://frontend.turing.edu/projects/module-1/self-care-center.html).
 
-[//]: <> (## Wins + Challenges)
+## Wins + Challenges
 
-[//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
+- I used this project to challenge myself to learn new CSS techniques. I was able to learn how animate SVGs and apply smooth backround transitions. I also learned techniques to avoid that might slow down the responsiveness of a site and lead to a lesser user experience.
+- I was able to complete the project ahead of schedule.
