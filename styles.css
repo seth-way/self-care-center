@@ -1,12 +1,8 @@
-/*---
-font-family: 'Quicksand', sans-serif;
-COLORS 
-light-yellow - #f7e4bf;
-light-blue - #78a7c6;
-dark-blue - #134d71;
-white - #ffffff;
-black - #000000;
----*/
+:root {
+  --light-yellow: #f7e4bf;
+  --light-blue: #78a7c6;
+  --dark-blue: #134d71;
+}
 
 body {
   background: rgba(0, 0, 0, 0);
@@ -23,7 +19,7 @@ body {
 
 .bg {
   position: absolute;
-  transition: opacity 300ms;
+  transition: opacity 800ms;
   top: 0;
   left: 0;
   width: 100%;
@@ -34,21 +30,21 @@ body {
   &.current {
     opacity: 1;
   }
-
   &#bg-default {
-    background-image: linear-gradient(#134d71, #78a7c6, #f7e4bf);
+    background-image: linear-gradient(
+      var(--dark-blue),
+      var(--light-blue),
+      var(--light-yellow)
+    );
   }
-
   &#bg-affirmations {
     background-image: linear-gradient(#947db3, #f7adc1, #f0ecdf);
   }
-
   &#bg-mantras {
     background-image: linear-gradient(#c76b98, #f09f9c, #fcc3a3);
   }
-
   &#bg-base {
-    background: #134d71;
+    background: var(--dark-blue);
     z-index: -2;
     opacity: 1;
   }
@@ -79,7 +75,9 @@ article {
   width: 550px;
   max-width: 95vw;
 }
-
+////////////////////////////////
+/* ------ message form ------ */
+////////////////////////////////
 form {
   font-style: italic;
   min-height: 40px;
@@ -93,7 +91,7 @@ form {
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    color: #134d71;
+    color: var(--dark-blue);
   }
 }
 
@@ -109,19 +107,21 @@ input {
 
 button {
   padding: 5px 20px;
-  background: #134d71;
+  background: var(--dark-blue);
   color: #ffffff;
   border-radius: 5px;
   border: hidden;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.6s ease-in-out;
 
   &:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 2px 2px #78a7c6;
+    box-shadow: 0 0 2px 2px var(--light-blue);
     cursor: pointer;
   }
 }
-
+////////////////////////////////////////
+/* ------ message display area ------ */
+////////////////////////////////////////
 #message-display-area {
   min-height: 150px;
   width: 800px;
@@ -154,7 +154,9 @@ button {
   width: auto;
   transition: all 1.5s ease-in-out;
 }
-
+////////////////////////////////////////
+/* ------ meditation animation ------ */
+////////////////////////////////////////
 .animate > .meditation-head {
   animation: grow 5s infinite ease-in-out;
   transform-box: fill-box;
@@ -177,7 +179,6 @@ button {
   animation: rotateClockwise 6s infinite linear;
   transform-box: fill-box;
   transform-origin: -120% 57%;
-  animation-play-state: running;
 }
 
 @keyframes rotateClockwise {
