@@ -49,5 +49,5 @@ This repository was built by [Seth Way](https://github.com/seth-way).
 
 - I used this project to challenge myself to learn new CSS techniques. I was able to learn how animate SVGs & apply smooth background transitions. I also learned techniques to avoid that might slow down the responsiveness of a site & lead to a lesser user experience.
 - I worked with @media breakpoints for the first time. I was able to successfully make changes for an optimized mobile experience.
-- I work with async functions, promises, & the setTimeout function to allow time in a synchronous function for CSS transitions. Normally, slowing down an action in such a way may be a negative, but for this usecase, it allowed me to show off my SVG animations. It also fit well with the over all 'calming' theme of the app.
+- I used async functions, promises, & the setTimeout function to allow time in a synchronous function for CSS transitions. Normally, slowing down an action in such a way may be a negative, but for this usecase, it allowed me to show off my SVG animations. It also fit well with the over all 'calming' theme of the app.
 - I was able to complete the project ahead of schedule.
