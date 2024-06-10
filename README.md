@@ -22,11 +22,11 @@ This solo coding challenge gave me the opportunity to get a pulse on where I'm a
 ## Preview of App
 
 ### For Desktop
-![Preview of App on desktop](https://imgur.com/EXzjh3O.gif)
+![Preview of App on desktop](demo.gif)
 
 ### For Mobile
 
-![Preview of App on mobile](https://imgur.com/og7FOyg.gif)
+![Preview of App on mobile](demo-mobile.gif)
 
 ## Context
 
